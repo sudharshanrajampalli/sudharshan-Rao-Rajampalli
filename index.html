@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudharshan Rao Rajampalli | Linux & Cloud Engineer</title>
-    <meta name="description" content="Linux & Cloud Support Engineer with 2.5 years experience in AWS, OCI, RHEL, Terraform. L1/L2 production support specialist.">
+    <title>Sudharshan Rao Rajampalli | Linux & Cloud Support Engineer | HCL Technologies</title>
+    <meta name="description" content="2.5+ years L1/L2 production support | HCL Technologies | AWS, OCI Exadata, RHEL 6/7/8/9 | Terraform IaC | 150+ servers | 24/7 SLA compliant">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-blue: #3b82f6;
+            --success-green: #10b981;
+            --whatsapp-green: #25D366;
+            --amber: #f59e0b;
+            --red-hcl: #dc2626;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-400: #cbd5e1;
+            --slate-500: #94a3b8;
+            --slate-700: #334155;
+            --slate-900: #0f172a;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,39 +30,76 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #FFFFFF;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #e5e7eb;
+            background: var(--slate-900);
             overflow-x: hidden;
-            background: #0a0a0a;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Particles Background */
-        #particles {
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background: var(--whatsapp-green);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float i {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Hero Gradient Background */
+        #hero {
+            background: linear-gradient(135deg, 
+                rgba(59, 130, 246, 0.12) 0%, 
+                rgba(16, 185, 129, 0.1) 50%,
+                rgba(15, 23, 42, 0.95) 100%);
+            position: relative;
         }
 
         /* Header */
         header {
-            background: rgba(15, 76, 117, 0.95);
-            backdrop-filter: blur(20px);
+            background: rgba(15, 23, 42, 0.97);
+            backdrop-filter: blur(25px);
             color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
 
@@ -57,9 +110,9 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #00d4ff, #ff6b6b);
+            font-size: 1.875rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -72,802 +125,839 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--slate-100);
             text-decoration: none;
             font-weight: 500;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-size: 0.95rem;
             position: relative;
-            transition: all 0.3s ease;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(45deg, #00d4ff, #ff6b6b);
-            transition: width 0.3s ease;
+        .nav-links a:hover {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .hcl-badge {
+            background: linear-gradient(135deg, var(--red-hcl), #b91c1c);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hcl-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
         }
 
         .menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
-            z-index: 1001;
+            gap: 6px;
         }
 
         .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
+            width: 28px;
+            height: 4px;
+            background: var(--slate-100);
             transition: 0.3s;
             border-radius: 2px;
         }
 
-        /* Hero */
+        /* Hero Section */
         #hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(120,119,198,0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,119,198,0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(120,219,255,0.3) 0%, transparent 50%);
-            position: relative;
-            overflow: hidden;
+            padding-top: 100px;
         }
 
         .hero-content {
             text-align: center;
-            max-width: 800px;
-            transform: translateY(50px);
-            opacity: 0;
-            animation: slideInUp 1s ease forwards;
-        }
-
-        @keyframes slideInUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            max-width: 1000px;
         }
 
         .profile-photo {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
+            width: 240px;
+            height: 240px;
+            border-radius: 24px;
             object-fit: cover;
-            border: 5px solid transparent;
-            background: linear-gradient(45deg, #00d4ff, #ff6b6b, #667eea);
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-            box-shadow: 0 0 50px rgba(0,212,255,0.5), inset 0 0 50px rgba(255,255,255,0.1);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            margin: 0 auto 2rem;
+            border: 5px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin: 0 auto 3.5rem;
         }
 
         .profile-photo:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 0 100px rgba(0,212,255,0.8);
+            transform: scale(1.08) rotate(3deg);
+            border-color: var(--primary-blue);
+            box-shadow: 0 50px 100px rgba(59, 130, 246, 0.3);
+        }
+
+        .position-title {
+            font-size: 1.125rem;
+            color: var(--success-green);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         #hero h1 {
             font-size: 4rem;
-            background: linear-gradient(45deg, #fff, #00d4ff);
+            background: linear-gradient(135deg, var(--slate-50), var(--primary-blue));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
             margin-bottom: 2rem;
-            position: relative;
+            font-weight: 800;
+            line-height: 1.15;
         }
 
-        .typing-text {
-            border-right: 3px solid #00d4ff;
-            animation: blink 1s infinite;
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
         }
 
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-blue), var(--success-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--slate-400);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3.5rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-            color: white;
-            padding: 18px 40px;
+            gap: 12px;
+            padding: 18px 36px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.05rem;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            border: 2px solid transparent;
             position: relative;
             overflow: hidden;
-            margin: 0.5rem;
+            white-space: nowrap;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), #1d4ed8);
+            color: white;
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
         }
 
-        .btn:hover::before {
-            left: 100%;
+        .btn-primary:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.5);
         }
 
-        .btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(255,107,107,0.6);
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--slate-100);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .btn-download {
-            background: linear-gradient(45deg, #00d4ff, #0099cc);
-            box-shadow: 0 10px 30px rgba(0,212,255,0.4);
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
         }
 
-        .btn-download:hover {
-            box-shadow: 0 20px 40px rgba(0,212,255,0.6);
+        .btn-hcl {
+            background: linear-gradient(135deg, var(--red-hcl), #b91c1c);
+            color: white;
+            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
+            font-weight: 700;
+        }
+
+        .btn-hcl:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp-green);
+            color: white;
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+            font-weight: 700;
+            animation: whatsappPulse 2s infinite;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6); }
         }
 
         /* Sections */
         section {
-            padding: 100px 0;
-            position: relative;
+            padding: 160px 0;
+        }
+
+        section:nth-child(even) {
+            background: rgba(30, 41, 59, 0.6);
         }
 
         h2 {
             font-size: 3.5rem;
             text-align: center;
-            margin-bottom: 4rem;
-            background: linear-gradient(45deg, #fff, #00d4ff);
+            margin-bottom: 5rem;
+            background: linear-gradient(135deg, var(--slate-50), var(--primary-blue));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #00d4ff);
-            margin: 1rem auto 0;
-            border-radius: 2px;
-            box-shadow: 0 0 20px rgba(255,107,107,0.5);
-        }
-
-        /* About */
-        #about {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .about-photo {
-            width: 350px;
-            height: 350px;
-            border-radius: 25px;
-            object-fit: cover;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-            transition: all 0.5s ease;
-        }
-
-        .about-photo:hover {
-            transform: scale(1.05) rotateY(10deg);
-            box-shadow: 0 35px 80px rgba(0,212,255,0.3);
-        }
-
-        .profile-summary {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-weight: 800;
         }
 
         /* Experience Cards */
-        .cards {
+        .experience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
         }
 
-        .card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(20px);
-            padding: 3rem;
-            border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .experience-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(30px);
+            padding: 3.5rem;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
         }
 
-        .card::before {
+        .experience-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #00d4ff, #ff6b6b, #667eea);
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--success-green), var(--amber), var(--red-hcl));
             transform: scaleX(0);
             transition: transform 0.5s ease;
         }
 
-        .card:hover::before {
+        .experience-card:hover::before {
             transform: scaleX(1);
         }
 
-        .card:hover {
-            transform: translateY(-20px) rotateX(5deg);
-            box-shadow: 0 30px 80px rgba(0,212,255,0.3);
-            border-color: rgba(0,212,255,0.5);
+        .experience-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+            border-color: rgba(59, 130, 246, 0.4);
         }
 
-        .card h3 {
-            color: #00d4ff;
-            margin-bottom: 1.5rem;
-            font-size: 1.6rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .card-icon {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2.5rem;
+            display: block;
+            transition: all 0.4s ease;
         }
 
-        .list-items li {
-            margin-bottom: 1.2rem;
+        .experience-card:hover .card-icon {
+            color: var(--success-green);
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .card-title {
+            color: var(--slate-50);
+            margin-bottom: 2rem;
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-list li {
             padding-left: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
+            color: var(--slate-400);
             font-size: 1.1rem;
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.6s ease;
         }
 
-        .card:hover .list-items li {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .list-items li::before {
-            content: '✔';
-            color: #ff6b6b;
-            font-size: 1.2rem;
+        .achievement-list li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-size: 1.25rem;
+            font-weight: bold;
             position: absolute;
             left: 0;
-            animation: glow 2s infinite alternate;
         }
 
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px #ff6b6b; }
-            100% { text-shadow: 0 0 20px #ff6b6b; }
-        }
-
-        /* Skills */
+        /* Services Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
-        .skill-tag {
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,212,255,0.2));
-            backdrop-filter: blur(10px);
-            padding: 1.25rem 1.5rem;
-            border-radius: 20px;
+        .skill-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             text-align: center;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.25);
+        }
+
+        .skill-icon {
+            font-size: 4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .skill-card:hover .skill-icon {
+            color: var(--success-green);
+            transform: scale(1.1);
+        }
+
+        .skill-card h3 {
+            color: var(--slate-50);
+            font-size: 1.5rem;
             font-weight: 700;
-            color: white;
-            border: 1px solid rgba(0,212,255,0.3);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 1rem;
         }
 
-        .skill-tag::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            transition: all 0.6s ease;
-            transform: translate(-50%, -50%);
-        }
-
-        .skill-tag:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .skill-tag:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(0,212,255,0.4);
-            border-color: #00d4ff;
+        .skill-card p {
+            color: var(--slate-400);
+            font-size: 1.05rem;
         }
 
         /* Certifications */
-        #certs {
-            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #certs::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #00d4ff, #ff6b6b, transparent);
-        }
-
         .certs-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 4rem 2rem;
         }
 
         .certs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 3rem;
         }
 
-        .cert-item {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(15px);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(0,212,255,0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .cert-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px);
         }
 
-        .cert-item.animate {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-            transition: all 0.6s ease;
-        }
-
-        .cert-item:nth-child(1) { transition-delay: 0.1s; }
-        .cert-item:nth-child(2) { transition-delay: 0.2s; }
-        .cert-item:nth-child(3) { transition-delay: 0.3s; }
-        .cert-item:nth-child(4) { transition-delay: 0.4s; }
-        .cert-item:nth-child(5) { transition-delay: 0.5s; }
-        .cert-item:nth-child(6) { transition-delay: 0.6s; }
-        .cert-item:nth-child(7) { transition-delay: 0.7s; }
-
-        .cert-item:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0,212,255,0.4);
-            border-color: #00d4ff;
-        }
-
-        .cert-item::before {
+        .cert-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #00d4ff, #ff6b6b);
-            transform: scaleY(0);
-            transition: transform 0.4s ease;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
         }
 
-        .cert-item:hover::before {
-            transform: scaleY(1);
+        .cert-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translateX(20px) translateY(20px);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px rgba(16, 185, 129, 0.3);
+            border-color: var(--success-green);
         }
 
         .cert-icon {
-            font-size: 2.5rem;
-            color: #ff6b6b;
-            margin-bottom: 1rem;
-            display: block;
-            animation: pulse 2s infinite;
+            font-size: 4rem;
+            color: var(--success-green);
+            margin-bottom: 2rem;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .cert-title {
-            font-size: 1.3rem;
+        .cert-card h3 {
+            color: var(--slate-50);
+            font-size: 1.375rem;
             font-weight: 700;
-            color: #00d4ff;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-detail {
+            color: var(--slate-400);
+            font-size: 1.125rem;
+            font-weight: 500;
         }
 
         /* Contact */
-        #contact {
-            background: linear-gradient(135deg, #0f4c75 0%, #1e6091 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .contact-info {
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
         }
 
-        .contact-item {
-            padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+        .contact-card {
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
             cursor: pointer;
-            box-sizing: border-box;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
-        .contact-item:hover {
-            transform: scale(1.05);
-            background: rgba(0,212,255,0.2);
+        .contact-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--primary-blue);
+            box-shadow: 0 35px 70px rgba(59, 130, 246, 0.3);
         }
 
-        .contact-item i {
-            font-size: 2.5rem;
-            color: #ff6b6b;
+        .contact-card.whatsapp-card:hover {
+            background: rgba(37, 211, 102, 0.15);
+            border-color: var(--whatsapp-green);
+            box-shadow: 0 35px 70px rgba(37, 211, 102, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-card .contact-icon {
+            color: var(--whatsapp-green);
+        }
+
+        .contact-card:hover .contact-icon {
+            color: var(--success-green);
+            transform: scale(1.2);
+        }
+
+        .whatsapp-card:hover .contact-icon {
+            color: #fff;
+            background: var(--whatsapp-green);
+            border-radius: 50%;
+            transform: scale(1.2);
+        }
+
+        .contact-text {
+            font-size: 1.25rem;
+            font-weight: 600;
             margin-bottom: 1rem;
         }
 
-        .contact-item a {
-            display: inline-block;
-            max-width: 100%;
-            color: white;
-            text-decoration: none;
+        .contact-subtitle {
+            color: var(--slate-400);
+            font-size: 1rem;
         }
 
-        .contact-item a:hover {
-            color: #00d4ff;
+        .contact-text a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-blue);
         }
 
         /* Footer */
         footer {
-            background: #000;
-            color: #888;
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 0 2rem;
             text-align: center;
-            padding: 3rem 0;
-            position: relative;
+            color: var(--slate-400);
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex !important;
+        @media (max-width: 1024px) {
+            .experience-grid, .certs-grid {
+                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+                gap: 2.5rem;
             }
+        }
 
-            .nav-links {
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            
+            .menu-toggle { display: flex; }
+            .nav-links { 
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(15,76,117,0.98);
+                background: rgba(15, 23, 42, 0.98);
                 flex-direction: column;
-                padding: 2rem;
-                backdrop-filter: blur(20px);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                transform: translateY(-10px);
-                opacity: 0;
-                transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                padding: 2.5rem;
+                border-radius: 0 0 24px 24px;
+                backdrop-filter: blur(25px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             }
-
-            .nav-links.active {
-                display: flex !important;
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .nav-links a {
-                padding: 1rem 0;
-                font-size: 1.2rem;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            #hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
+            .nav-links.active { display: flex; }
+            .nav-links a { 
+                padding: 1.25rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 text-align: center;
-                gap: 3rem;
             }
-
-            .contact-info,
-            .certs-grid {
-                grid-template-columns: 1fr;
+            
+            #hero h1 { font-size: 3rem; }
+            .hero-stats { 
+                gap: 2rem; 
+                flex-direction: column;
+                align-items: center;
             }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-photo,
-            .about-photo {
-                max-width: 100%;
-                height: auto;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            .container {
-                padding: 0 15px;
+            .stat-number { font-size: 2rem; }
+            section { padding: 120px 0; }
+            h2 { font-size: 2.75rem; }
+            .btn-group { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 320px; justify-content: center; }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 26px;
             }
         }
 
         @media (max-width: 480px) {
-            #hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .btn {
-                padding: 15px 30px;
-                font-size: 1rem;
-            }
+            #hero h1 { font-size: 2.5rem; }
+            .profile-photo { width: 200px; height: 200px; }
+            .hero-stats { gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <canvas id="particles"></canvas>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918639605543?text=Hi%20Sudharshan,%20I'm%20interested%20in%20your%20Linux%20Cloud%20services" 
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <header>
         <nav class="container">
             <div class="logo">Sudharshan Rao</div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certs">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hcl-badge">
+                <i class="fas fa-building"></i> HCL Technologies
+            </div>
             <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </nav>
     </header>
 
-    <section id="hero">
+    <section id="hero" class="fade-in-up">
         <div class="container">
             <div class="hero-content">
-                <img src="sudharshan.png" alt="Sudharshan Rao Rajampalli" class="profile-photo" loading="lazy">
+                <img src="sudharshan.png" alt="Sudharshan Rao Rajampalli - HCL Technologies" class="profile-photo" loading="lazy">
+                <div class="position-title">Linux & Cloud Support Engineer</div>
                 <h1>Sudharshan Rao Rajampalli</h1>
-                <div class="hero-subtitle">
-                    <span class="typing-text">Linux & Cloud Engineer</span> | 2.5+ Years Experience
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2.5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">RHEL Servers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Efficiency Gains</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">SLA Support</span>
+                    </div>
                 </div>
-                <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.9;">
-                    AWS | OCI | RHEL | Terraform | DevOps
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-                    <a href="#contact" class="btn">
-                        <i class="fas fa-paper-plane"></i>
-                        Get In Touch
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-briefcase"></i> Hire for Project
                     </a>
-                    <a href="SudharshanR.pdf" class="btn btn-download" download>
-                        <i class="fas fa-download"></i>
-                        Download Resume
+                    <a href="https://wa.me/918639605543?text=Hi%20Sudharshan,%20I'm%20interested%20in%20your%20Linux%20Cloud%20services" 
+                       class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Chat
+                    </a>
+                    <a href="SudharshanR.pdf" class="btn btn-secondary" download>
+                        <i class="fas fa-file-pdf"></i> Full Resume
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <section id="experience" class="fade-in-up">
         <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="sudharshan.png" alt="Professional Photo" class="about-photo" loading="lazy">
-                <div class="profile-summary">
-                    Linux & Cloud Engineer with 2.5 years of hands-on experience providing L1/L2 production support across Linux (RHEL 6/7/8/9) and cloud environments (AWS, Oracle Cloud Infrastructure, VMware). Strong expertise in incident management, system administration, cloud provisioning, monitoring, security hardening, and infrastructure automation using Terraform and Bash. Proven ability to support mission-critical systems, reduce downtime, improve operational efficiency, and meet SLA targets in 24/7 support environments.
+            <h2>HCL Technologies Experience</h2>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--slate-400); max-width: 800px; margin: 0 auto 5rem auto;">
+                Linux Cloud Support Engineer & Analyst | Sep 2023 - Present | 24/7 Production Environments
+            </p>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <i class="fas fa-cloud card-icon"></i>
+                    <h3 class="card-title">Cloud Infrastructure Automation</h3>
+                    <ul class="achievement-list">
+                        <li>Terraform IaC templates reduced manual setup by <strong>40%</strong></li>
+                        <li>AWS EC2/S3/VPC/Lambda/CloudWatch provisioning</li>
+                        <li>OCI Exadata Cloud Service (EXC-DB) optimization</li>
+                        <li>Hybrid cloud VMware-AWS-OCI integration</li>
+                        <li>Automated cloud provisioning workflows</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <i class="fas fa-server card-icon"></i>
+                    <h3 class="card-title">Linux System Administration</h3>
+                    <ul class="achievement-list">
+                        <li>Managed <strong>150+ RHEL 6/7/8/9</strong> production servers</li>
+                        <li>Bash automation reduced overhead by <strong>40%</strong></li>
+                        <li>ServiceNow ITIL processes (Incident/Change/Problem)</li>
+                        <li>LVM/RAID/NFS/Samba configuration & optimization</li>
+                        <li>User/group management & kernel updates</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <i class="fas fa-shield-alt card-icon"></i>
+                    <h3 class="card-title">Security & Monitoring</h3>
+                    <ul class="achievement-list">
+                        <li>Automated patching reduced downtime by <strong>30%</strong></li>
+                        <li>Grafana/Prometheus/ELK reduced MTTD by <strong>25%</strong></li>
+                        <li>SELinux/SSH hardening & vulnerability remediation</li>
+                        <li>24/7 on-call support with RCA documentation</li>
+                        <li>OpManager monitoring & alerting</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section id="services" class="fade-in-up">
         <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3><i class="fas fa-cloud"></i>Cloud Infrastructure & Automation</h3>
-                    <ul class="list-items">
-                        <li>Designed and deployed Terraform-based IaC templates across OCI, AWS, VMware - reduced manual setup by 40%</li>
-                        <li>Provisioned AWS EC2, S3, VPC, Lambda, CloudWatch for scalable environments</li>
-                        <li>Automated cloud provisioning workflows, reducing delivery time from days to hours</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-server"></i>Linux System Administration</h3>
-                    <ul class="list-items">
-                        <li>Administered 150+ RHEL 6/7/8/9 servers across production environments</li>
-                        <li>Bash scripting automation reduced operational overhead by 40%</li>
-                        <li>ServiceNow: Incident, Request, Problem, Change tickets</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-shield-alt"></i>Patching, Security & Monitoring</h3>
-                    <ul class="list-items">
-                        <li>Automated patching cycles reduced downtime by 30%</li>
-                        <li>Grafana, Prometheus, ELK Stack - reduced MTTD by 25%</li>
-                        <li>SELinux, SSH hardening, vulnerability assessments</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2>Core Skills</h2>
+            <h2>Freelance Services</h2>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--slate-400); max-width: 800px; margin: 0 auto 5rem auto;">
+                Enterprise-grade solutions for mission-critical systems
+            </p>
             <div class="skills-grid">
-                <div class="skill-tag">AWS EC2/S3/VPC/Lambda</div>
-                <div class="skill-tag">OCI Exadata</div>
-                <div class="skill-tag">RHEL 6/7/8/9</div>
-                <div class="skill-tag">Terraform IaC</div>
-                <div class="skill-tag">Bash/Ansible</div>
-                <div class="skill-tag">Grafana/Prometheus</div>
-                <div class="skill-tag">ELK Stack</div>
-                <div class="skill-tag">SELinux/SSH/IAM</div>
-                <div class="skill-tag">ServiceNow/ITIL</div>
-                <div class="skill-tag">VMware</div>
+                <div class="skill-card">
+                    <i class="fas fa-rocket skill-icon"></i>
+                    <h3>Cloud Migration</h3>
+                    <p>AWS/OCI/VMware migrations with zero-downtime Terraform automation</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cogs skill-icon"></i>
+                    <h3>Linux Automation</h3>
+                    <p>RHEL administration, Bash/Ansible scripting, monitoring setup</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-tools skill-icon"></i>
+                    <h3>24/7 Production Support</h3>
+                    <p>L1/L2 incident management, SLA compliance, root cause analysis</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-line skill-icon"></i>
+                    <h3>Performance Optimization</h3>
+                    <p>Grafana dashboards, capacity planning, cost optimization</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="certs">
+    <section id="skills" class="fade-in-up">
         <div class="container">
-            <h2>Certifications & Education</h2>
+            <h2>Technical Expertise</h2>
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-aws skill-icon"></i>
+                        <h3>AWS Services</h3>
+                        <p>EC2, S3, VPC, Lambda, CloudWatch</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database skill-icon"></i>
+                        <h3>OCI Exadata</h3>
+                        <p>EXC-DB optimization & management</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-redhat skill-icon"></i>
+                        <h3>RHEL 6/7/8/9</h3>
+                        <p>Production server administration</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-code skill-icon"></i>
+                        <h3>Terraform IaC</h3>
+                        <p>Infrastructure automation</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-terminal skill-icon"></i>
+                        <h3>Bash/Ansible</h3>
+                        <p>Automation scripting</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-chart-area skill-icon"></i>
+                        <h3>Monitoring Stack</h3>
+                        <p>Grafana, Prometheus, ELK</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="fade-in-up">
+        <div class="container">
+            <h2>Professional Certifications</h2>
             <div class="certs-container">
                 <div class="certs-grid">
-                    <div class="cert-item">
+                    <div class="cert-card">
                         <i class="fas fa-certificate cert-icon"></i>
-                        <div class="cert-title">Microsoft Certified</div>
-                        <div>Azure AI Fundamentals (AZ-900)</div>
+                        <h3>Microsoft Certified: Azure Administrator Associate</h3>
+                        <div class="cert-detail">AZ-104</div>
                     </div>
-                    <div class="cert-item">
+                    <div class="cert-card">
                         <i class="fas fa-certificate cert-icon"></i>
-                        <div class="cert-title">Microsoft Azure Administrator</div>
-                        <div>AZ-104 Certification</div>
+                        <h3>Microsoft Azure AI Fundamentals</h3>
+                        <div class="cert-detail">AZ-900</div>
                     </div>
-                    <div class="cert-item">
+                    <div class="cert-card">
                         <i class="fas fa-certificate cert-icon"></i>
-                        <div class="cert-title">ITIL Foundation</div>
-                        <div>AXELOS Certified</div>
+                        <h3>ITIL Foundation</h3>
+                        <div class="cert-detail">AXELOS Certified</div>
                     </div>
-                    <div class="cert-item">
+                    <div class="cert-card">
                         <i class="fas fa-certificate cert-icon"></i>
-                        <div class="cert-title">Oracle Cloud AI Foundations</div>
-                        <div>1Z0-1122-24 Associate</div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-laptop-code cert-icon"></i>
-                        <div class="cert-title">DevOps Internship</div>
-                        <div>Frontlinemedia - Completed</div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-graduation-cap cert-icon"></i>
-                        <div class="cert-title">B.Tech ECE</div>
-                        <div>Andhra Loyola Institute (2019-2023) CGPA: 6.5</div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-trophy cert-icon"></i>
-                        <div class="cert-title">1st Prize IEEE Project Expo</div>
-                        <div>National Level - Autonomous Vehicle System</div>
+                        <h3>Oracle Cloud AI Foundations Associate</h3>
+                        <div class="cert-detail">1Z0-1122-24</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in-up">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <div><a href="https://wa.me/918639605543" target="_blank">WhatsApp Chat</a></div>
+            <h2>Immediate Availability</h2>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--slate-400); max-width: 800px; margin: 0 auto 5rem auto;">
+                Ready for your next project - 24/7 availability
+            </p>
+            <div class="contact-grid">
+                <div class="contact-card whatsapp-card">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <div class="contact-text">+91-8639605543</div>
+                    <div class="contact-subtitle">Click to chat on WhatsApp</div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div><a href="tel:+918639605543">+91-8639605543</a></div>
-                </div>
-                <div class="contact-item email">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <a href="mailto:sudharshanrajampalli@gmail.com">
-                            sudharshanrajampalli@gmail.com
-                        </a>
+                <div class="contact-card">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div class="contact-text">
+                        <a href="mailto:sudharshanrajampalli@gmail.com">sudharshanrajampalli@gmail.com</a>
                     </div>
+                    <div class="contact-subtitle">Response within 2 hours</div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>Vijayawada, Andhra Pradesh, India</div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <div class="contact-text">Vijayawada, AP, India</div>
+                    <div class="contact-subtitle">Remote & Onsite availability</div>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <div><a href="https://linkedin.com/in/sudharshan-rao-rajampalli-7b69b223a" target="_blank">LinkedIn</a></div>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <div><a href="https://github.com/sudharshanrajampalli" target="_blank">GitHub</a></div>
+                <div class="contact-card">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <div class="contact-text">
+                        <a href="https://linkedin.com/in/sudharshan-rao-rajampalli-7b69b223a" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-subtitle">Professional endorsements & references</div>
                 </div>
             </div>
-            <div style="margin-top: 3rem;">
-                <a href="SudharshanR.pdf" class="btn btn-download" download style="font-size: 1.2rem; padding: 20px 50px;">
-                    <i class="fas fa-file-pdf"></i> Download Full Resume
+            <div style="text-align: center; margin-top: 6rem;">
+                <a href="https://wa.me/918639605543?text=Hi%20Sudharshan,%20I'm%20interested%20in%20your%20Linux%20Cloud%20services" 
+                   class="btn btn-whatsapp" target="_blank" style="font-size: 1.25rem; padding: 22px 54px;">
+                    <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
+                </a>
+                <a href="SudharshanR.pdf" class="btn btn-primary" download style="font-size: 1.25rem; padding: 22px 54px; margin-left: 1rem;">
+                    <i class="fas fa-file-pdf"></i> Download Resume
                 </a>
             </div>
         </div>
@@ -875,112 +965,144 @@
 
     <footer>
         <div class="container">
-            © 2025 Sudharshan Rao Rajampalli. Built with passion for Cloud Engineering.
+            <p>&copy; 2025 Sudharshan Rao Rajampalli | HCL Technologies | Professional Cloud Engineering Services | All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--slate-500);">
+                📱 WhatsApp: +91-8639605543 | Response within 2 hours
+            </p>
         </div>
     </footer>
 
     <script>
-        // Particles Animation
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        for(let i = 0; i < 100; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                radius: Math.random() * 2 + 1
-            });
+        // WhatsApp click-to-chat function
+        function openWhatsApp(phone, message = '') {
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
         }
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';
-                ctx.fill();
-                
-                p.x += p.vx;
-                p.y += p.vy;
-                
-                if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
-            });
-            requestAnimationFrame(animate);
-        }
-        animate();
-
-        // Resize canvas
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // Mobile menu
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // WhatsApp handlers for all click points
+        document.querySelectorAll('.whatsapp-card, .btn-whatsapp, .whatsapp-float').forEach(element => {
+            element.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                navLinks.classList.remove('active');
+                e.stopPropagation();
+                openWhatsApp('918639605543', 'Hi Sudharshan, I found your portfolio and am interested in your Linux & Cloud services. Can we discuss?');
             });
         });
 
-        // Typing effect
-        const text = "Linux & Cloud Engineer";
-        let i = 0;
-        const typingElement = document.querySelector('.typing-text');
-        function typeWriter() {
-            if (i < text.length) {
-                typingElement.textContent = text.slice(0, i + 1);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        setTimeout(typeWriter, 1000);
-
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            document.querySelector('#hero').style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
-
-        // Certifications Animation
-        const certObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.cert-item').forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('animate');
-                        }, index * 100);
-                    });
+        // Smooth scrolling navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (!this.classList.contains('btn-whatsapp')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                    document.querySelector('.nav-links')?.classList.remove('active');
                 }
             });
-        }, { threshold: 0.1 });
+        });
 
-        certObserver.observe(document.querySelector('#certs'));
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 150);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+        // Navbar scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+                header.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.4)';
+                header.style.backdropFilter = 'blur(30px)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.97)';
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+                header.style.backdropFilter = 'blur(25px)';
+            }
+        });
+
+        // Animated stats counter
+        const stats = document.querySelectorAll('.stat-number');
+        const animateStats = () => {
+            stats.forEach(stat => {
+                const target = stat.textContent;
+                const count = +target.replace(/[^0-9.]/g, '') || 0;
+                const isPercent = target.includes('%');
+                const increment = count / 100;
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= count) {
+                        stat.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + (isPercent ? '%' : (count > 1 ? '+' : ''));
+                    }
+                }, 30);
+            });
+        };
+
+        const heroObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateStats();
+            }
+        });
+        heroObserver.observe(document.querySelector('#hero'));
+
+        // Profile photo parallax effect
+        const profilePhoto = document.querySelector('.profile-photo');
+        document.addEventListener('mousemove', (e) => {
+            const rect = profilePhoto.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            const moveX = (x / rect.width) * 10;
+            const moveY = (y / rect.height) * 10;
+            profilePhoto.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`;
+        });
+
+        profilePhoto.addEventListener('mouseleave', () => {
+            profilePhoto.style.transform = 'scale(1)';
+        });
+
+        // Preload critical assets
+        window.addEventListener('load', () => {
+            const images = ['sudharshan.png'];
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
+        // WhatsApp float button visibility on scroll
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const floatBtn = document.querySelector('.whatsapp-float');
+            if (window.scrollY > 500) {
+                floatBtn.style.opacity = '1';
+                floatBtn.style.transform = 'scale(1)';
+            } else {
+                floatBtn.style.opacity = '0.7';
+                floatBtn.style.transform = 'scale(0.9)';
+            }
+            lastScrollY = window.scrollY;
+        });
     </script>
 </body>
 </html>
