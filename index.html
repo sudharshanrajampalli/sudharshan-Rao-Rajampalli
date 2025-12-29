@@ -3,714 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudharshan Rao Rajampalli | Linux & Cloud Support Engineer | HCL Technologies</title>
-    <meta name="description" content="2.5+ years L1/L2 production support | HCL Technologies | AWS, OCI Exadata, RHEL 6/7/8/9 | Terraform IaC | 150+ servers | 24/7 SLA compliant">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Sudharshan Rao Rajampalli - HCL Technologies | Linux Cloud Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #3b82f6;
             --success-green: #10b981;
-            --whatsapp-green: #25D366;
-            --amber: #f59e0b;
+            --whatsapp-green: #25d366;
             --red-hcl: #dc2626;
+            --amber: #f59e0b;
             --slate-50: #f8fafc;
             --slate-100: #f1f5f9;
-            --slate-200: #e2e8f0;
-            --slate-400: #cbd5e1;
-            --slate-500: #94a3b8;
-            --slate-700: #334155;
-            --slate-900: #0f172a;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: #e5e7eb;
-            background: var(--slate-900);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); 
+            color: #f8fafc; 
+            line-height: 1.6; 
+            overflow-x: hidden; 
         }
 
-        /* WhatsApp Floating Button */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
+        /* Header */
+        header { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            background: rgba(15, 23, 42, 0.97); 
+            backdrop-filter: blur(25px); 
+            transition: all 0.3s ease; 
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af); 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { 
+            color: var(--slate-100); 
+            text-decoration: none; 
+            font-weight: 500; 
+            padding: 0.75rem 1.25rem; 
+            border-radius: 12px; 
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            font-size: 0.95rem; 
+            position: relative; 
+        }
+        .nav-links a:hover { 
+            background: rgba(59, 130, 246, 0.15); 
+            color: var(--primary-blue); 
+            transform: translateY(-2px); 
+        }
+        .hcl-badge { 
+            background: linear-gradient(135deg, var(--red-hcl), #b91c1c); 
+            color: white; 
+            padding: 0.75rem 1.75rem; 
+            border-radius: 9999px; 
+            font-size: 0.875rem; 
+            font-weight: 700; 
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3); 
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            display: flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+        }
+        .hcl-badge:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4); }
+        .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 6px; }
+        .menu-toggle span { width: 28px; height: 4px; background: var(--slate-100); transition: 0.3s; border-radius: 2px; }
+
+        /* Hero Section */
+        #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 100px; }
+        .hero-content { text-align: center; max-width: 1000px; }
+        .profile-photo { 
+            width: 240px; 
+            height: 240px; 
+            border-radius: 24px; 
+            object-fit: cover; 
+            border: 5px solid rgba(59, 130, 246, 0.2); 
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.5); 
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            margin: 0 auto 3.5rem; 
+        }
+        .profile-photo:hover { 
+            transform: scale(1.08) rotate(3deg); 
+            border-color: var(--primary-blue); 
+            box-shadow: 0 50px 100px rgba(59, 130, 246, 0.3); 
+        }
+        .position-title { 
+            font-size: 1.125rem; 
+            color: var(--success-green); 
+            font-weight: 600; 
+            margin-bottom: 1rem; 
+            letter-spacing: 0.05em; 
+            text-transform: uppercase; 
+        }
+        #hero h1 { 
+            font-size: 4rem; 
+            background: linear-gradient(135deg, var(--slate-50), var(--primary-blue)); 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin-bottom: 2rem; 
+            font-weight: 800; 
+            line-height: 1.15; 
+        }
+        .hero-stats { display: flex; justify-content: center; gap: 4rem; margin: 3rem 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            background: linear-gradient(135deg, var(--primary-blue), var(--success-green)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: block; 
+        }
+        .stat-label { 
+            font-size: 0.95rem; 
+            color: var(--slate-400); 
+            font-weight: 500; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+        }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 3.5rem; }
+        .btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px; 
+            padding: 18px 36px; 
+            border-radius: 16px; 
+            font-weight: 600; 
+            font-size: 1.05rem; 
+            text-decoration: none; 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            border: 2px solid transparent; 
+            position: relative; 
+            overflow: hidden; 
+            white-space: nowrap; 
+        }
+        .btn-primary { 
+            background: linear-gradient(135deg, var(--primary-blue), #1d4ed8); 
+            color: white; 
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4); 
+        }
+        .btn-primary:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(59, 130, 246, 0.5); }
+        .btn-secondary { 
+            background: rgba(255, 255, 255, 0.1); 
+            color: var(--slate-100); 
+            backdrop-filter: blur(15px); 
+            border: 2px solid rgba(255, 255, 255, 0.2); 
+        }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-4px); }
+        .btn-whatsapp { 
+            background: var(--whatsapp-green); 
+            color: white; 
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); 
+            font-weight: 700; 
+            animation: whatsappPulse 2s infinite; 
+        }
+        .btn-whatsapp:hover { 
+            transform: translateY(-6px) scale(1.05); 
+            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.5); 
+        }
+        @keyframes whatsappPulse { 
+            0%, 100% { box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); } 
+            50% { box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6); } 
+        }
+
+        /* Sections */
+        section { padding: 160px 0; }
+        section:nth-child(even) { background: rgba(30, 41, 59, 0.6); }
+        h2 { 
+            font-size: 3.5rem; 
+            text-align: center; 
+            margin-bottom: 5rem; 
+            background: linear-gradient(135deg, var(--slate-50), var(--primary-blue)); 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            font-weight: 800; 
+        }
+
+        /* Experience Cards */
+        .experience-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); 
+            gap: 3rem; 
+            margin-top: 5rem; 
+        }
+        .experience-card { 
+            background: rgba(255, 255, 255, 0.06); 
+            backdrop-filter: blur(30px); 
+            padding: 3.5rem; 
+            border-radius: 28px; 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .experience-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            height: 5px; 
+            background: linear-gradient(90deg, var(--primary-blue), var(--success-green), var(--amber), var(--red-hcl)); 
+            transform: scaleX(0); 
+            transition: transform 0.5s ease; 
+        }
+        .experience-card:hover::before { transform: scaleX(1); }
+        .experience-card:hover { 
+            transform: translateY(-20px); 
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5); 
+            border-color: rgba(59, 130, 246, 0.4); 
+        }
+        .card-icon { 
+            font-size: 3.5rem; 
+            color: var(--primary-blue); 
+            margin-bottom: 2.5rem; 
+            display: block; 
+            transition: all 0.4s ease; 
+        }
+        .experience-card:hover .card-icon { 
+            color: var(--success-green); 
+            transform: scale(1.15) rotate(5deg); 
+        }
+        .card-title { 
+            color: var(--slate-50); 
+            margin-bottom: 2rem; 
+            font-size: 1.875rem; 
+            font-weight: 700; 
+        }
+        .achievement-list { list-style: none; }
+        .achievement-list li { 
+            padding-left: 2rem; 
+            margin-bottom: 1.5rem; 
+            position: relative; 
+            color: var(--slate-400); 
+            font-size: 1.1rem; 
+        }
+        .achievement-list li::before { 
+            content: '✓'; 
+            color: var(--success-green); 
+            font-size: 1.25rem; 
+            font-weight: bold; 
+            position: absolute; 
+            left: 0; 
+        }
+
+        /* Services Grid */
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
+        }
+        .skill-card { 
+            background: rgba(255, 255, 255, 0.04); 
+            backdrop-filter: blur(20px); 
+            padding: 2.5rem; 
+            border-radius: 24px; 
+            border: 1px solid rgba(59, 130, 246, 0.2); 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            text-align: center; 
+            cursor: pointer; 
+        }
+        .skill-card:hover { 
+            transform: translateY(-12px); 
+            border-color: var(--primary-blue);
+            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.25); 
+        }
+        .skill-icon { 
+            font-size: 4rem; 
+            color: var(--primary-blue); 
+            margin-bottom: 1.5rem; 
+            display: block; 
+        }
+        .skill-card:hover .skill-icon { 
+            color: var(--success-green); 
+            transform: scale(1.1); 
+        }
+        .skill-card h3 { 
+            color: var(--slate-50); 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            margin-bottom: 1rem; 
+        }
+        .skill-card p { 
+            color: var(--slate-400); 
+            font-size: 1.05rem; 
+        }
+
+        /* Certifications */
+        .certs-container { max-width: 1000px; margin: 0 auto; }
+        .certs-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
+            gap: 3rem; 
+        }
+        .cert-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(25px); 
+            padding: 3rem; 
+            border-radius: 24px; 
+            border: 1px solid rgba(16, 185, 129, 0.3); 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .cert-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: -50%; 
+            left: -50%; 
+            width: 200%; 
+            height: 200%; 
+            background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent); 
+            transform: rotate(45deg); 
+            transition: all 0.6s ease; 
+            opacity: 0; 
+        }
+        .cert-card:hover::before { 
+            opacity: 1; 
+            transform: rotate(45deg) translateX(20px) translateY(20px); 
+        }
+        .cert-card:hover { 
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px rgba(16, 185, 129, 0.3); 
+            border-color: var(--success-green); 
+        }
+        .cert-icon { 
+            font-size: 4rem; 
+            color: var(--success-green); 
+            margin-bottom: 2rem; 
+        }
+        .cert-card h3 { 
+            color: var(--slate-50); 
+            font-size: 1.375rem; 
+            font-weight: 700; 
+            margin-bottom: 1rem; 
+        }
+        .cert-detail { 
+            color: var(--slate-400); 
+            font-size: 1.125rem; 
+            font-weight: 500; 
+        }
+
+        /* Contact Form Styles */
+        .contact-form-container {
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(30px);
+            padding: 3.5rem;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+        .contact-form-container h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--slate-50);
+            font-weight: 700;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            position: relative;
+        }
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            color: var(--slate-50);
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--slate-400);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+        .form-submit {
+            display: block;
+            width: 100%;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .form-message {
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.2);
+            border: 2px solid var(--success-green);
+            color: var(--success-green);
+        }
+        .form-message.error {
+            background: rgba(220, 38, 38, 0.2);
+            border: 2px solid var(--red-hcl);
+            color: var(--red-hcl);
+        }
+
+        /* Contact Cards */
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 3rem; 
+            margin-top: 5rem; 
+        }
+        .contact-card { 
+            padding: 3rem; 
+            background: rgba(255, 255, 255, 0.06); 
+            border-radius: 24px; 
+            backdrop-filter: blur(20px); 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            text-align: center; 
+            cursor: pointer; 
+            border: 2px solid rgba(255, 255, 255, 0.1); 
+        }
+        .contact-card:hover { 
+            transform: translateY(-15px) scale(1.02); 
+            background: rgba(59, 130, 246, 0.1); 
+            border-color: var(--primary-blue); 
+            box-shadow: 0 35px 70px rgba(59, 130, 246, 0.3); 
+        }
+        .contact-card.whatsapp-card:hover { 
+            background: rgba(37, 211, 102, 0.15); 
+            border-color: var(--whatsapp-green); 
+            box-shadow: 0 35px 70px rgba(37, 211, 102, 0.3); 
+        }
+        .contact-icon { 
+            font-size: 3rem; 
+            color: var(--primary-blue); 
+            margin-bottom: 2rem; 
+            display: block; 
+            transition: all 0.3s ease; 
+        }
+        .whatsapp-card .contact-icon { color: var(--whatsapp-green); }
+        .contact-card:hover .contact-icon { 
+            color: var(--success-green); 
+            transform: scale(1.2); 
+        }
+        .whatsapp-card:hover .contact-icon { 
+            color: #fff; 
+            background: var(--whatsapp-green); 
+            border-radius: 50%; 
+            transform: scale(1.2); 
+            padding: 1rem;
+            margin: 0 auto 2rem;
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-text { 
+            font-size: 1.25rem; 
+            font-weight: 600; 
+            margin-bottom: 1rem; 
+        }
+        .contact-subtitle { 
+            color: var(--slate-400); 
+            font-size: 1rem; 
+        }
+        .contact-text a { 
+            color: inherit; 
+            text-decoration: none; 
+            transition: color 0.3s ease; 
+        }
+        .contact-text a:hover { color: var(--primary-blue); }
+
+        /* Footer */
+        footer { 
+            background: rgba(15, 23, 42, 0.8); 
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 4rem 0 2rem; 
+            text-align: center; 
+            color: var(--slate-400); 
+        }
+
+        /* Animations */
+        .fade-in-up { 
+            opacity: 0; 
+            transform: translateY(60px); 
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+        }
+        .fade-in-up.animate { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        /* WhatsApp Float */
         .whatsapp-float {
             position: fixed;
             width: 60px;
             height: 60px;
             bottom: 40px;
             right: 40px;
-            background: var(--whatsapp-green);
-            color: white;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            animation: whatsappFloat 2s infinite;
         }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-        }
-
         .whatsapp-float i {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        /* Hero Gradient Background */
-        #hero {
-            background: linear-gradient(135deg, 
-                rgba(59, 130, 246, 0.12) 0%, 
-                rgba(16, 185, 129, 0.1) 50%,
-                rgba(15, 23, 42, 0.95) 100%);
-            position: relative;
-        }
-
-        /* Header */
-        header {
-            background: rgba(15, 23, 42, 0.97);
-            backdrop-filter: blur(25px);
-            color: white;
-            padding: 1.5rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.875rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--slate-100);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.75rem 1.25rem;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            font-size: 0.95rem;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            background: rgba(59, 130, 246, 0.15);
-            color: var(--primary-blue);
-            transform: translateY(-2px);
-        }
-
-        .hcl-badge {
-            background: linear-gradient(135deg, var(--red-hcl), #b91c1c);
-            color: white;
-            padding: 0.75rem 1.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 700;
-            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hcl-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 6px;
-        }
-
-        .menu-toggle span {
-            width: 28px;
-            height: 4px;
-            background: var(--slate-100);
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        /* Hero Section */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 100px;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 1000px;
-        }
-
-        .profile-photo {
-            width: 240px;
-            height: 240px;
-            border-radius: 24px;
-            object-fit: cover;
-            border: 5px solid rgba(59, 130, 246, 0.2);
-            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.5);
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            margin: 0 auto 3.5rem;
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.08) rotate(3deg);
-            border-color: var(--primary-blue);
-            box-shadow: 0 50px 100px rgba(59, 130, 246, 0.3);
-        }
-
-        .position-title {
-            font-size: 1.125rem;
-            color: var(--success-green);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        #hero h1 {
-            font-size: 4rem;
-            background: linear-gradient(135deg, var(--slate-50), var(--primary-blue));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 2rem;
-            font-weight: 800;
-            line-height: 1.15;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-blue), var(--success-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-top: 16px;
             display: block;
         }
-
-        .stat-label {
-            font-size: 0.95rem;
-            color: var(--slate-400);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 3.5rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 36px;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-blue), #1d4ed8);
-            color: white;
-            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.5);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--slate-100);
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-4px);
-        }
-
-        .btn-hcl {
-            background: linear-gradient(135deg, var(--red-hcl), #b91c1c);
-            color: white;
-            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
-            font-weight: 700;
-        }
-
-        .btn-hcl:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.5);
-        }
-
-        .btn-whatsapp {
-            background: var(--whatsapp-green);
-            color: white;
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
-            font-weight: 700;
-            animation: whatsappPulse 2s infinite;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-6px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.5);
-        }
-
-        @keyframes whatsappPulse {
-            0%, 100% { box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); }
-            50% { box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6); }
-        }
-
-        /* Sections */
-        section {
-            padding: 160px 0;
-        }
-
-        section:nth-child(even) {
-            background: rgba(30, 41, 59, 0.6);
-        }
-
-        h2 {
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 5rem;
-            background: linear-gradient(135deg, var(--slate-50), var(--primary-blue));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
-
-        /* Experience Cards */
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: 3rem;
-            margin-top: 5rem;
-        }
-
-        .experience-card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(30px);
-            padding: 3.5rem;
-            border-radius: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--success-green), var(--amber), var(--red-hcl));
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-
-        .experience-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .experience-card:hover {
-            transform: translateY(-20px);
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .card-icon {
-            font-size: 3.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 2.5rem;
-            display: block;
-            transition: all 0.4s ease;
-        }
-
-        .experience-card:hover .card-icon {
-            color: var(--success-green);
-            transform: scale(1.15) rotate(5deg);
-        }
-
-        .card-title {
-            color: var(--slate-50);
-            margin-bottom: 2rem;
-            font-size: 1.875rem;
-            font-weight: 700;
-        }
-
-        .achievement-list {
-            list-style: none;
-        }
-
-        .achievement-list li {
-            padding-left: 2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            color: var(--slate-400);
-            font-size: 1.1rem;
-        }
-
-        .achievement-list li::before {
-            content: '✓';
-            color: var(--success-green);
-            font-size: 1.25rem;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Services Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .skill-card {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(20px);
-            padding: 2.5rem;
-            border-radius: 24px;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--primary-blue);
-            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.25);
-        }
-
-        .skill-icon {
-            font-size: 4rem;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .skill-card:hover .skill-icon {
-            color: var(--success-green);
-            transform: scale(1.1);
-        }
-
-        .skill-card h3 {
-            color: var(--slate-50);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .skill-card p {
-            color: var(--slate-400);
-            font-size: 1.05rem;
-        }
-
-        /* Certifications */
-        .certs-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .certs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 3rem;
-        }
-
-        .cert-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
-        }
-
-        .cert-card:hover::before {
-            opacity: 1;
-            transform: rotate(45deg) translateX(20px) translateY(20px);
-        }
-
-        .cert-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 40px 80px rgba(16, 185, 129, 0.3);
-            border-color: var(--success-green);
-        }
-
-        .cert-icon {
-            font-size: 4rem;
-            color: var(--success-green);
-            margin-bottom: 2rem;
-        }
-
-        .cert-card h3 {
-            color: var(--slate-50);
-            font-size: 1.375rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .cert-detail {
-            color: var(--slate-400);
-            font-size: 1.125rem;
-            font-weight: 500;
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 5rem;
-        }
-
-        .contact-card {
-            padding: 3rem;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 24px;
-            backdrop-filter: blur(20px);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            text-align: center;
-            cursor: pointer;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            background: rgba(59, 130, 246, 0.1);
-            border-color: var(--primary-blue);
-            box-shadow: 0 35px 70px rgba(59, 130, 246, 0.3);
-        }
-
-        .contact-card.whatsapp-card:hover {
-            background: rgba(37, 211, 102, 0.15);
-            border-color: var(--whatsapp-green);
-            box-shadow: 0 35px 70px rgba(37, 211, 102, 0.3);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: 2rem;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-card .contact-icon {
-            color: var(--whatsapp-green);
-        }
-
-        .contact-card:hover .contact-icon {
-            color: var(--success-green);
-            transform: scale(1.2);
-        }
-
-        .whatsapp-card:hover .contact-icon {
-            color: #fff;
-            background: var(--whatsapp-green);
-            border-radius: 50%;
-            transform: scale(1.2);
-        }
-
-        .contact-text {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .contact-subtitle {
-            color: var(--slate-400);
-            font-size: 1rem;
-        }
-
-        .contact-text a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-text a:hover {
-            color: var(--primary-blue);
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(15, 23, 42, 0.8);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 4rem 0 2rem;
-            text-align: center;
-            color: var(--slate-400);
-        }
-
-        /* Animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .fade-in-up.animate {
-            opacity: 1;
-            transform: translateY(0);
+        @keyframes whatsappFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .experience-grid, .certs-grid {
-                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-                gap: 2.5rem;
+            .experience-grid, .certs-grid { 
+                grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+                gap: 2.5rem; 
             }
         }
-
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
-            
             .menu-toggle { display: flex; }
             .nav-links { 
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(15, 23, 42, 0.98);
-                flex-direction: column;
-                padding: 2.5rem;
-                border-radius: 0 0 24px 24px;
-                backdrop-filter: blur(25px);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                display: none; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background: rgba(15, 23, 42, 0.98); 
+                flex-direction: column; 
+                padding: 2.5rem; 
+                border-radius: 0 0 24px 24px; 
+                backdrop-filter: blur(25px); 
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
             }
             .nav-links.active { display: flex; }
             .nav-links a { 
-                padding: 1.25rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                text-align: center;
+                padding: 1.25rem; 
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+                text-align: center; 
             }
-            
             #hero h1 { font-size: 3rem; }
             .hero-stats { 
                 gap: 2rem; 
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column; 
+                align-items: center; 
             }
             .stat-number { font-size: 2rem; }
             section { padding: 120px 0; }
             h2 { font-size: 2.75rem; }
-            .btn-group { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 320px; justify-content: center; }
-            
-            .whatsapp-float {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 26px;
+            .btn-group { 
+                flex-direction: column; 
+                align-items: center; 
             }
+            .btn { width: 100%; max-width: 320px; justify-content: center; }
+            .form-grid { grid-template-columns: 1fr; }
+            .contact-form-container { padding: 2.5rem 2rem; }
         }
-
         @media (max-width: 480px) {
             #hero h1 { font-size: 2.5rem; }
             .profile-photo { width: 200px; height: 200px; }
             .hero-stats { gap: 1.5rem; }
+            .whatsapp-float { right: 20px; }
         }
     </style>
 </head>
 <body>
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/918639605543?text=Hi%20Sudharshan,%20I'm%20interested%20in%20your%20Linux%20Cloud%20services" 
-       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -722,35 +633,40 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#certs">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hcl-badge">
-                <i class="fas fa-building"></i> HCL Technologies
+                <i class="fas fa-building"></i>
+                HCL Technologies
             </div>
             <div class="menu-toggle">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero" class="fade-in-up">
         <div class="container">
             <div class="hero-content">
                 <img src="sudharshan.png" alt="Sudharshan Rao Rajampalli - HCL Technologies" class="profile-photo" loading="lazy">
-                <div class="position-title">Linux & Cloud Support Engineer</div>
+                <div class="position-title">Linux Cloud Support Engineer</div>
                 <h1>Sudharshan Rao Rajampalli</h1>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">2.5+</span>
+                        <span class="stat-number">2.5</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">150+</span>
+                        <span class="stat-number">150</span>
                         <span class="stat-label">RHEL Servers</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">40%</span>
+                        <span class="stat-number">40</span>
                         <span class="stat-label">Efficiency Gains</span>
                     </div>
                     <div class="stat-item">
@@ -760,25 +676,30 @@
                 </div>
                 <div class="btn-group">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-briefcase"></i> Hire for Project
+                        <i class="fas fa-briefcase"></i>
+                        Hire for Project
                     </a>
                     <a href="https://wa.me/918639605543?text=Hi%20Sudharshan,%20I'm%20interested%20in%20your%20Linux%20Cloud%20services" 
-                       class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Chat
+                       class="btn btn-whatsapp" 
+                       target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Chat
                     </a>
                     <a href="SudharshanR.pdf" class="btn btn-secondary" download>
-                        <i class="fas fa-file-pdf"></i> Full Resume
+                        <i class="fas fa-file-pdf"></i>
+                        Full Resume
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience" class="fade-in-up">
         <div class="container">
             <h2>HCL Technologies Experience</h2>
             <p style="text-align: center; font-size: 1.25rem; color: var(--slate-400); max-width: 800px; margin: 0 auto 5rem auto;">
-                Linux Cloud Support Engineer & Analyst | Sep 2023 - Present | 24/7 Production Environments
+                Linux Cloud Support Engineer / Analyst | Sep 2023 - Present | 24/7 Production Environments
             </p>
             <div class="experience-grid">
                 <div class="experience-card">
@@ -799,13 +720,13 @@
                         <li>Managed <strong>150+ RHEL 6/7/8/9</strong> production servers</li>
                         <li>Bash automation reduced overhead by <strong>40%</strong></li>
                         <li>ServiceNow ITIL processes (Incident/Change/Problem)</li>
-                        <li>LVM/RAID/NFS/Samba configuration & optimization</li>
+                        <li>LVM/RAID/NFS/Samba configuration optimization</li>
                         <li>User/group management & kernel updates</li>
                     </ul>
                 </div>
                 <div class="experience-card">
                     <i class="fas fa-shield-alt card-icon"></i>
-                    <h3 class="card-title">Security & Monitoring</h3>
+                    <h3 class="card-title">Security Monitoring</h3>
                     <ul class="achievement-list">
                         <li>Automated patching reduced downtime by <strong>30%</strong></li>
                         <li>Grafana/Prometheus/ELK reduced MTTD by <strong>25%</strong></li>
@@ -818,6 +739,7 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="fade-in-up">
         <div class="container">
             <h2>Freelance Services</h2>
@@ -849,6 +771,7 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="fade-in-up">
         <div class="container">
             <h2>Technical Expertise</h2>
@@ -889,6 +812,38 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in-up">
+        <div class="container">
+            <h2>Key Projects & Achievements</h2>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--slate-400); max-width: 800px; margin: 0 auto 5rem auto;">
+                Award-winning projects from B.Tech ECE, Andhra Loyola Institute (2019-2023), CGPA 6.5
+            </p>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <i class="fas fa-car card-icon"></i>
+                    <h3 class="card-title">Autonomous Vehicle System</h3>
+                    <ul class="achievement-list">
+                        <li><strong>1st Prize</strong> National Level Project Expo 2023 (IEEE)</li>
+                        <li>Real-time sensors & cloud-based analytics</li>
+                        <li>B.Tech ECE final year project</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <i class="fas fa-users card-icon"></i>
+                    <h3 class="card-title">Leadership Roles</h3>
+                    <ul class="achievement-list">
+                        <li>Executive Member, MAGIS Club</li>
+                        <li>Student technology leadership forum</li>
+                        <li>Organized technical workshops & events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+        <!-- Certifications Section -->
     <section id="certs" class="fade-in-up">
         <div class="container">
             <h2>Professional Certifications</h2>
@@ -896,7 +851,7 @@
                 <div class="certs-grid">
                     <div class="cert-card">
                         <i class="fas fa-certificate cert-icon"></i>
-                        <h3>Microsoft Certified: Azure Administrator Associate</h3>
+                        <h3>Microsoft Certified Azure Administrator Associate</h3>
                         <div class="cert-detail">AZ-104</div>
                     </div>
                     <div class="cert-card">
@@ -919,12 +874,41 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="fade-in-up">
         <div class="container">
             <h2>Immediate Availability</h2>
             <p style="text-align: center; font-size: 1.25rem; color: var(--slate-400); max-width: 800px; margin: 0 auto 5rem auto;">
                 Ready for your next project - 24/7 availability
             </p>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h3><i class="fas fa-paper-plane"></i> Send Project Inquiry</h3>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" id="requesterName" name="name" placeholder="Your Full Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="requesterPhone" name="phone" placeholder="Phone Number *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="requesterEmail" name="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <textarea id="projectDescription" name="description" placeholder="Project Description / Requirements *" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Inquiry
+                    </button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+
+            <!-- Contact Cards -->
             <div class="contact-grid">
                 <div class="contact-card whatsapp-card">
                     <i class="fab fa-whatsapp contact-icon"></i>
@@ -939,9 +923,16 @@
                     <div class="contact-subtitle">Response within 2 hours</div>
                 </div>
                 <div class="contact-card">
+                    <i class="fas fa-github contact-icon"></i>
+                    <div class="contact-text">
+                        <a href="https://github.com/sudharshanrajampalli" target="_blank">github.com/sudharshanrajampalli</a>
+                    </div>
+                    <div class="contact-subtitle">Code repositories & projects</div>
+                </div>
+                <div class="contact-card">
                     <i class="fas fa-map-marker-alt contact-icon"></i>
                     <div class="contact-text">Vijayawada, AP, India</div>
-                    <div class="contact-subtitle">Remote & Onsite availability</div>
+                    <div class="contact-subtitle">Remote / Onsite availability</div>
                 </div>
                 <div class="contact-card">
                     <i class="fab fa-linkedin contact-icon"></i>
@@ -951,30 +942,36 @@
                     <div class="contact-subtitle">Professional endorsements & references</div>
                 </div>
             </div>
+            
             <div style="text-align: center; margin-top: 6rem;">
                 <a href="https://wa.me/918639605543?text=Hi%20Sudharshan,%20I'm%20interested%20in%20your%20Linux%20Cloud%20services" 
-                   class="btn btn-whatsapp" target="_blank" style="font-size: 1.25rem; padding: 22px 54px;">
-                    <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
+                   class="btn btn-whatsapp" 
+                   target="_blank" 
+                   style="font-size: 1.25rem; padding: 22px 54px;">
+                    <i class="fab fa-whatsapp"></i>
+                    Start WhatsApp Chat
                 </a>
                 <a href="SudharshanR.pdf" class="btn btn-primary" download style="font-size: 1.25rem; padding: 22px 54px; margin-left: 1rem;">
-                    <i class="fas fa-file-pdf"></i> Download Resume
+                    <i class="fas fa-file-pdf"></i>
+                    Download Resume
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Sudharshan Rao Rajampalli | HCL Technologies | Professional Cloud Engineering Services | All rights reserved.</p>
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--slate-500);">
-                📱 WhatsApp: +91-8639605543 | Response within 2 hours
+                WhatsApp: +91-8639605543 | Response within 2 hours | Vijayawada, Andhra Pradesh, India
             </p>
         </div>
     </footer>
 
     <script>
         // WhatsApp click-to-chat function
-        function openWhatsApp(phone, message = '') {
+        function openWhatsApp(phone, message) {
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
@@ -983,23 +980,67 @@
         // WhatsApp handlers for all click points
         document.querySelectorAll('.whatsapp-card, .btn-whatsapp, .whatsapp-float').forEach(element => {
             element.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                openWhatsApp('918639605543', 'Hi Sudharshan, I found your portfolio and am interested in your Linux & Cloud services. Can we discuss?');
+                if (this.classList.contains('whatsapp-card') || this.classList.contains('btn-whatsapp') || this.classList.contains('whatsapp-float')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openWhatsApp('918639605543', 'Hi Sudharshan, I found your portfolio and am interested in your Linux Cloud services. Can we discuss?');
+                }
             });
+        });
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const formMessage = document.getElementById('formMessage');
+            
+            // Show loading state
+            const submitBtn = this.querySelector('.form-submit');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual backend endpoint)
+            setTimeout(() => {
+                // Here you would typically send to your backend
+                console.log('Form Data:', Object.fromEntries(formData));
+                
+                // Show success message
+                formMessage.className = 'form-message success';
+                formMessage.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    Thank you! Your inquiry has been sent successfully. 
+                    Sudharshan will contact you within 2 hours via WhatsApp or email.
+                `;
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                
+                // Restore button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Auto-scroll to WhatsApp
+                setTimeout(() => {
+                    document.querySelector('.whatsapp-card').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }, 2000);
+                
+            }, 1500);
         });
 
         // Smooth scrolling navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                if (!this.classList.contains('btn-whatsapp')) {
+                if (!this.classList.contains('btn-whatsapp') && !this.closest('.whatsapp-card')) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                     document.querySelector('.nav-links')?.classList.remove('active');
                 }
@@ -1043,7 +1084,7 @@
         const animateStats = () => {
             stats.forEach(stat => {
                 const target = stat.textContent;
-                const count = +target.replace(/[^0-9.]/g, '') || 0;
+                const count = parseInt(target.replace(/[^0-9]/g, '0'));
                 const isPercent = target.includes('%');
                 const increment = count / 100;
                 let current = 0;
@@ -1053,22 +1094,20 @@
                         stat.textContent = target;
                         clearInterval(timer);
                     } else {
-                        stat.textContent = Math.floor(current) + (isPercent ? '%' : (count > 1 ? '+' : ''));
+                        stat.textContent = `${Math.floor(current)}${isPercent ? '%' : ''}`;
                     }
                 }, 30);
             });
         };
 
         const heroObserver = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateStats();
-            }
+            if (entries[0].isIntersecting) animateStats();
         });
         heroObserver.observe(document.querySelector('#hero'));
 
         // Profile photo parallax effect
         const profilePhoto = document.querySelector('.profile-photo');
-        document.addEventListener('mousemove', (e) => {
+        profilePhoto.addEventListener('mousemove', (e) => {
             const rect = profilePhoto.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
@@ -1076,9 +1115,18 @@
             const moveY = (y / rect.height) * 10;
             profilePhoto.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`;
         });
-
         profilePhoto.addEventListener('mouseleave', () => {
             profilePhoto.style.transform = 'scale(1)';
+        });
+
+        // Form input focus effects
+        document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-5px)';
+            });
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
         });
 
         // Preload critical assets
@@ -1088,20 +1136,6 @@
                 const img = new Image();
                 img.src = src;
             });
-        });
-
-        // WhatsApp float button visibility on scroll
-        let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            const floatBtn = document.querySelector('.whatsapp-float');
-            if (window.scrollY > 500) {
-                floatBtn.style.opacity = '1';
-                floatBtn.style.transform = 'scale(1)';
-            } else {
-                floatBtn.style.opacity = '0.7';
-                floatBtn.style.transform = 'scale(0.9)';
-            }
-            lastScrollY = window.scrollY;
         });
     </script>
 </body>
